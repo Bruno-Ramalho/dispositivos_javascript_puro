@@ -8,29 +8,41 @@
         <h1 class="titulo">Personagens Star Wars</h1>
         <div class="container">
             <p class="carregamento">Carregando...</p>
+            <button>Próxima</button>
         </div>
 
-        <div id="cadastro" class="js-escondido">
+        <div id="cadastro" class="cadastro js-escondido">
             <form class="criar-contato-form">
               <h1>Criar novo contato</h1>
-              <label for="name">Nome: </label>
-              <input type="text" name="nome" id="jsNome" />
-              <label for="telefone">Telefone: </label>
-              <input type="text" name="telefone" id="jsTelefone" />
-              <label for="foto">Foto: </label>
-              <input type="text" name="foto" id="jsFoto" />
-              <button id="jsVoltarLista" class="voltar" type="button">Voltar</button>
+              <label for="nome">Nome: </label>
+              <input type="text" name="nome" id="jsNome" value=''/>
+              <label for="altura">Altura: </label>
+              <input type="text" name="altura" id="jsAltura" />
+              <label for="massa">Massa: </label>
+              <input type="text" name="massa" id="jsMassa" />
+              <label for="corCabelo">Cor do cabelo: </label>
+              <input type="text" name="corCabelo" id="jsCorCabelo" />
+              <label for="corPele">Cor da pele: </label>
+              <input type="text" name="corPele" id="jsCorPele" />
+              <label for="corOlhos">Cor dos Olhos: </label>
+              <input type="text" name="corOlhos" id="jsCorOlhos" />
+              <label for="anoNascimento">Ano de nascimento: </label>
+              <input type="text" name="anoNascimento" id="jsAnoNascimento" />
+              <label for="genero">Gênero: </label>
+              <input type="text" name="genero" id="jsGenero" />
+              <button id="jsVoltarLista" class="voltar" type="button" onclick="voltar()">Voltar</button>
               <button id="jsCadastrar" class="cadastrar" type="button">Cadastrar</button>
             </form>
         </div>
 
         <div>
-            <button>Próxima</button>
+           
         </div>
-        <script>
+        <script > 
             var carregamento = document.querySelector('.carregamento');
             var container = document.querySelector('.container');
-            async function getPeople() 
+            var form = document.querySelector('.cadastro')
+            async function getPeople()
             {
             const response = await fetch('https://swapi.dev/api/people/?page=1',{
                 method: 'GET'
@@ -39,8 +51,7 @@
             }
             getPeople().then(response =>
             {
-            carregamento.classList.add('js-escondido');
-                
+                carregamento.classList.add('js-escondido');
                 response.results.map(function(val){
                     container.innerHTML+=`
                     <div class="nomePessoa">`+val.name+`
@@ -79,11 +90,17 @@
             function excluir(elem){
                 elem.remove()
             }
-            function editar(elem){
-                console.log("clicou");
-                conole.log(elem);
+            
+            function editar(){
+                container.classList.add('js-escondido');
+                form.classList.remove('js-escondido');
             }
-            e
+
+            function voltar(){
+                form.classList.add('js-escondido');
+                container.classList.remove('js-escondido');
+            }
+            
                 /*
             fetch('https://swapi.dev/api/people/?page=1',{
                 method: 'GET'

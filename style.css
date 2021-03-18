@@ -49,3 +49,32 @@ body{
     color: red;
     font-size: 150px;
 }
+
+.cadastro{
+    color:yellow;
+    display: flex;
+}
+
+.criar-contato-form {
+    width: 40%;
+    margin: 0 auto 0 auto;
+}
+
+.criar-contato-form label {
+    display: block;
+}
+
+.criar-contato-form input {
+    display: block;
+    width: 100%;
+}
+
+.criar-contato-form .cadastrar {
+    float: right;
+    width:45%
+}
+
+.criar-contato-form .voltar {
+    float: left;
+    width:45%
+}
