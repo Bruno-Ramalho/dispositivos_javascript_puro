@@ -5,7 +5,7 @@
     </head>
     <body>
 
-        <h1>Personagens Star Wars</h1>
+        <h1 class="titulo">Personagens Star Wars</h1>
         <div class="container">
             <p class="carregamento">Carregando...</p>
         </div>
@@ -44,8 +44,8 @@
                 response.results.map(function(val){
                     container.innerHTML+=`
                     <div class="nomePessoa">`+val.name+`
-                        <button onclick="excluir(this.parentElement)">Excluir</button>
-                        <button onclick="editar(this.parentElement)">Editar</button>
+                        <button class="botao" onclick="excluir(this.parentElement)">Excluir</button>
+                        <button class="botao" onclick="editar(this.parentElement)">Editar</button>
                         <div style="display:none" class="detalhes" >
                             <p id="altura">Altura: `+val.height+`</p>
                             <p id="massa">Massa: `+val.mass+`</p>
@@ -73,9 +73,8 @@
                     })
                 }
             }).catch(erro=>{
-                    console.log("Houve um erro:");
                     carregamento.classList.add('js-escondido');
-                    container.innerHTML+=`<p>Houve um erro ao acessar a API: `+erro+`</p>`
+                    container.innerHTML+=`<p class="mensagem-erro">Houve um erro ao acessar a API... o lado negro prevaleceu!</p>`
             });
             function excluir(elem){
                 elem.remove()

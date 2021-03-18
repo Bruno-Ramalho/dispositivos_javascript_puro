@@ -1,4 +1,11 @@
-
+body{
+    background: url("/images/estrelas.png");
+    background-color: black;
+}
+.container{
+    background: url("/images/estrelas.png");
+    background-color: black;
+}
 
 
 .js-escondido {
@@ -7,4 +14,38 @@
 
 .nomePessoa{
     cursor: pointer;
+}
+
+.titulo{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background: url("/images/estrelas.png");
+    background-color: black ;
+    color: yellow;
+    text-align: center;
+}
+
+.nomePessoa{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: yellow;
+    border-radius: 20px;
+    border-style: solid;
+    border-color: yellow;
+    background-color: black;
+    padding: 40px;
+    margin: 20px;
+}
+
+.carregamento{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color:yellow;
+    font-size: 150px;
+    align-self: center;
+    padding: 30px;
+    margin: 30px;
+}
+
+.mensagem-erro{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: red;
+    font-size: 150px;
 }
